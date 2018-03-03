@@ -18,7 +18,6 @@ public class Controller {
 		this.netController = new Net("localhost", 3333);
 		new Thread(this.netController).start();
 		this.netController.getMacAddress();
-		//System.out.println(this.netController.getIp() + " " + this.netController.getPort());
 		this.CRTwallet = new CRTWallet(this);
 		this.mainPanel = new MainPanel(this);
 		new MainFrame(mainPanel);

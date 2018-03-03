@@ -25,13 +25,13 @@ public class Button extends JButton {
 	
 	private Color blue = new Color(0, 221, 219);
 	private Color orange = new Color(255, 192, 115);
+	private Color drawColor;
 	
 	private int type;
 	private boolean removeText = true;
-	private String transaction;
-	private String from;
+	public String from;
 	private Double amount;
-	private String to;
+	public String to;
 
 	public Button(String name, int x, int y, int width, int height, JPanel panel, int type) {
 		this.type = type;
@@ -77,19 +77,19 @@ public class Button extends JButton {
 	}
 	
 	public void paintComponent(Graphics g){
-		//TODO :: set the correct colors for every transaction and make them usable!
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D) g;
 		g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_GASP);
 		if(!removeText){
-			g2.setColor(orange);
+			g2.setColor(drawColor);
 			g2.setFont(new Font("Futura", this.getFont().getStyle(), 14));
 			if(amount != 0.0) g2.drawString(amount + "", 137, 40);
 		}
 	}
 	
-	public void setFrom(String from){
+	public void setFrom(String from, Color color){
 		this.from = from;
+		this.drawColor = color;
 	}
 	
 	public void setAmount(Double amount){
