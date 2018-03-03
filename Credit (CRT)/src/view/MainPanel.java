@@ -95,21 +95,12 @@ public class MainPanel extends JPanel implements Runnable {
 		bottom.repaint();
 		for(String s : controller.getCRTWallet().getTransactions()){
 			String bits[] = s.split("/");
-			// TODO :: Set transactions, clicable button that do somehting, colors of the transactions. 
-			System.out.println(bits[0]);
 			String path = (bits[0].equals(controller.getCRTWallet().getAddress()) ? sendButtonPath : receiveButtonPath);
 			Button b = new Button("<html><center></center></html>", 15, 0, 245, 57, bottom, 3);
-			if(path.equals(sendButtonPath)){
-				b.setFrom(bits[0]);
-				b.setTo(bits[2]);
-			}else{
-				b.setFrom(bits[2]);
-				b.setTo(bits[0]);
-			}
+			b.setFrom(bits[0], (bits[0].equals(controller.getCRTWallet().getAddress()) ? new Color(0, 221, 219) : new Color(255, 192, 115)));
 			b.setAmount(Double.parseDouble(bits[1]));
+			b.setTo(bits[2]);
 			b.addImage(path, false);
-			/* TODO :: play with the HTML in hopes of optimizing the look of the buttons */
-			//<div style='height: 1px; background-color: #ffffff'></div>
 		}
 		bottom.revalidate();
 		bottom.repaint();

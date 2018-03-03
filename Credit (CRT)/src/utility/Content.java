@@ -90,7 +90,7 @@ public class Content {
 			content.add(this.read(from));
 			from++;
 		}
-		content.forEach(System.out::println);
+		if(DEBUG) content.forEach(System.out::println);
 		if(DEBUG) System.out.println("To line :" + to);
 		return content;
 	}
