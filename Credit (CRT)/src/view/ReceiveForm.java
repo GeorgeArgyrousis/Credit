@@ -16,8 +16,13 @@ public class ReceiveForm extends Frame {
 
 	private static final long serialVersionUID = 1L;
 
+<<<<<<< HEAD
 	public Label receiveLabel;
 	public Label addressLabel;
+=======
+	private Label receiveLabel;
+	private Label addressLabel;
+>>>>>>> 14fa458221d3137857efa2b76494297e9fdf24bf
 
 	private Button copyButton;
 	private String address;

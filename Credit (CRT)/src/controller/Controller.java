@@ -17,6 +17,10 @@ public class Controller {
 		this.blockChain = new BlockChain();
 		this.netController = new Net("localhost", 3333);
 		new Thread(this.netController).start();
+<<<<<<< HEAD
+=======
+		this.netController.getMacAddress();
+>>>>>>> 14fa458221d3137857efa2b76494297e9fdf24bf
 		this.CRTwallet = new CRTWallet(this);
 		this.mainPanel = new MainPanel(this);
 		new MainFrame(mainPanel);
